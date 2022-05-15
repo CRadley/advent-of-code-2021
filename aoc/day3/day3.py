@@ -16,8 +16,8 @@ def part_one(bins: List[int]) -> int:
 
 def part_two(bins: List[int]) -> int:
     counts = get_counts(bins)
-    output_bins_o = [x for x in bins]
-    output_bins_c = [x for x in bins]
+    output_bins_o = bins[:]
+    output_bins_c = bins[:]
     for i, _ in enumerate(counts):
         o_counts = get_counts(output_bins_o)
         c_counts = get_counts(output_bins_c)
