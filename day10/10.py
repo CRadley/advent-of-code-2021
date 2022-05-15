@@ -2,12 +2,9 @@ from statistics import median
 
 with open('inputs/10.txt', 'r') as f:
     complete = [line.strip() for line in f.readlines()]
-values = {
-    ')': 3,
-    '>': 25137,
-    '}': 1197,
-    ']': 57
-}
+values = {')': 3, '>': 25137, '}': 1197, ']': 57}
+opp = {'(':')', '[':']', '{':'}', '<':'>'}
+
 total = 0
 for line in complete:
     stack = []
@@ -29,12 +26,6 @@ for line in complete:
                 total += values[c]
                 break
 print(total)
-opp = {
-    '(':')',
-    '[':']',
-    '{':'}',
-    '<':'>'
-}
 
 totals = []
 for line in complete:
