@@ -1,9 +1,10 @@
 def is_winning(board, combination):
     for j in range(5):
-        if set(board[j * 5 if j else 0:(j+ 1) *5]).issubset(set(combination)):
-            return [int(x) for x in board[j * 5 if j else 0:(j+ 1) *5]]
-        elif set([board[j], board[j + 5], board[j + 10], board[j + 15], board[j + 20]]).issubset(set(combination)):
-            return [int(x) for x in [board[j], board[j + 5], board[j + 10], board[j + 15], board[j + 20]]]
+        row = board[j * 5:(j + 1) * 5]
+        column = [board[v] for v in range(j, 25, 5)]
+        for line in (row, column):
+            if set(line).issubset(set(combination)):
+                return [int(x) for x in line]
 
 def part_one(draws, boards):
     for i in range(len(draws)):
