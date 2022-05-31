@@ -17,13 +17,13 @@ def inputs() -> List[int]:
 
 
 def test_part_one_example(example_inputs: List[int]) -> None:
-    assert 5 == solve(example_inputs, False)
+    assert 5 == solve(example_inputs, True)
 
 def test_part_two_example(example_inputs: List[int]) -> None:
-    assert 12 == solve(example_inputs, True)
+    assert 12 == solve(example_inputs, False)
 
 def test_part_one_actual(inputs: List[int]) -> None:
-    assert 6572 == solve(inputs, False)
+    assert 6572 == solve(inputs, True)
 
 def test_part_two_actual(inputs: List[int]) -> None:
-    assert 21466 == solve(inputs, True)
+    assert 21466 == solve(inputs, False)
